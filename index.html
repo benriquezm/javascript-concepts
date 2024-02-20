@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script language="javascript" type="text/javascript">
+    <!--<script language="javascript" type="text/javascript">
         document.write("Hello World!");
-    </script>
+    </script>-->
 </head>
 <body>
-    
+    <p id="demo"></p>
 </body>
+    <script>
+        let cars = ["bmw", "volvo", "honda"];
+        document.getElementById("demo").innerHTML = cars;
+
+        let bmw = cars[0];
+        document.getElementById("demo").innerHTML = bmw;
+
+        let long = cars.length;
+        document.getElementById("demo").innerHTML = long;
+
+        let last = cars[cars.length - 1];
+        document.getElementById("demo").innerHTML = last;
+
+        cars.forEach((item, index, array) => {
+            console.log(item, index);
+        });
+        document.getElementById("demo").innerHTML = cars.toString();
+
+        let lastRemove = cars.pop();
+        document.getElementById("demo").innerHTML = lastRemove;
+
+        let addCar = cars.push("Linconln");
+        console.log(cars);
+        let lastCar = cars[cars.length - 1];
+        document.getElementById("demo").innerHTML = lastCar;
+
+        let firstRemove = cars.shift();
+        document.getElementById("demo").innerHTML = firstRemove;
+        console.log(cars);
+
+        cars.unshift("Audi");
+        document.getElementById("demo").innerHTML = cars.toString();
+
+        let bikes = ["yamaha", "suzuki", "harley"];
+        let vehicles = cars.concat(bikes);
+        document.getElementById("demo").innerHTML = vehicles.toString();
+
+        vehicles.sort();
+        document.getElementById("demo").innerHTML = vehicles.toString();
+
+        vehicles.reverse();
+        document.getElementById("demo").innerHTML = vehicles.toString();
+
+        let nums = [2, 3, 4, 5, 6, 7];
+        let numsMultiply = nums.map(multiply);
+        function multiply(value) {
+            return value * 2;
+        }
+        document.getElementById("demo").innerHTML = numsMultiply.toString();
+
+        let numsGreatherThanFour = nums.filter(comp);
+        function comp(value) {
+            return value > 4;
+        }
+        document.getElementById("demo").innerHTML = numsGreatherThanFour.toString();
+
+        let sumItemsArray = nums.reduce(sum);
+        function sum(total, value) {
+            return total + value;
+        }
+        document.getElementById("demo").innerHTML = sumItemsArray.toString();
+    </script>
 </html>
